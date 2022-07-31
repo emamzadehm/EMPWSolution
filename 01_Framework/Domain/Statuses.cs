@@ -1,0 +1,11 @@
+﻿
+namespace _01_Framework.Domain
+{
+    public static class Statuses
+    {
+        public const int New = 0;
+        public const int Confirmed = 1;
+        public const int Canceled = 2;
+        public const int Paid = 3;
+    }
+}

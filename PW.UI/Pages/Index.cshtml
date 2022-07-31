@@ -1,0 +1,114 @@
+﻿@page
+@model IndexModel
+<!-- START: HOME -->
+<section class="section section-home section-home-2 " id="home">
+
+    <div id="scene">
+        <img data-depth="0.1" class="shape1" src="~/assets/images/decor1.png" alt="Scene Images1">
+        <img data-depth="0.1" class="shape4" src="~/assets/images/decor4.png" alt="Scene Images1">
+        <img data-depth="0.1" class="shape5" src="~/assets/images/shape5.svg" alt="Scene Images1">
+        <img data-depth="0.1" class="shape6" src="~/assets/images/shape6.svg" alt="Scene Images1">
+        <img data-depth="0.2" class="shape2" src="~/assets/images/decor2.png" alt="Scene Images2">
+        <img data-depth="0.4" class="shape3" src="~/assets/images/decor3.png" alt="Scene Images3">
+        <img data-depth="0.2" class="shape7" src="~/assets/images/shape7.svg" alt="Scene Images3">
+        <img data-depth="0.1" class="shape8" src="~/assets/images/shape8.svg" alt="Scene Images3">
+    </div>
+
+    <div class="container vh-100">
+        <div class="row justify-content-center align-items-center section-home-in h-100vh">
+            <img class="hero-img img-fluid rounded-full" src="~/assets/images/logoT.png" alt="Numerical Methods">
+            <h1 class="my-4">
+                @*<span id="autoplay">
+                        <span>وب سایت شخصی</span>
+                        <span>دکتر سید ابوالقاسم امام زاده</span>
+                    </span>*@
+            </h1>
+        </div>
+    </div>
+    <div id="scroll-down"></div>
+</section>
+<!-- END: HOME -->
+<!-- START: ABOUT -->
+<partial name="About" />
+<!-- END: ABOUT -->
+<!-- START: Courses -->
+@await Component.InvokeAsync("Course")
+<!-- END: Courses -->
+<!-- START: TESTIMONY -->
+@await Component.InvokeAsync("Testimonials")
+<!-- END: TESTIMONY -->
+<!-- START: RESUME -->
+@await Component.InvokeAsync("Resume")
+<!-- END: RESUME -->
+<!-- START: BLOG -->
+<partial name="Blog" />
+<!-- END: BLOG -->
+<!-- START: CONTACT -->
+@await Component.InvokeAsync("Contact")
+@*@await ComponeInvokeAsync("ContactSend", new { message = ViewBag.nt })*@
+<section class="section section-contact" id="contact2">
+    <div class="container">
+
+
+        <div class="section-inner">
+            <div class="contact-Otherdetails ">
+
+
+                <div class="contact-form mt-5">
+                    <form method="post">
+                        <h5 class="section-subHead mb-2">فرم تماس</h5>
+                        @if (!string.IsNullOrWhiteSpace(Model.SuccessMessage))
+                        {
+                    <div class="alert-success p-1 rounded-pill">
+                        <i class="alert-success"></i>
+                        <p>@Model.SuccessMessage</p>
+                    </div>}
+                        @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+                        {
+                    <div class="alert-danger p-1rounded-pill">
+                        <i class="alert-danger"></i>
+                        <p>@Model.ErrorMessage</p>
+                    </div>}
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group mt-3 ">
+                                    <input asp-for="Message.Name" type="text" class="form-control b-box" placeholder="*نام شما">
+                                    <span asp-validation-for="Message.Name" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group mt-3 ">
+                                    <input asp-for="Message.Email" type="email" class="form-control b-box" placeholder="*ایمیل">
+                                    <span asp-validation-for="Message.Email" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group mt-3 ">
+                                    <input type="text" class="form-control b-box" asp-for="Message.Title" placeholder="موضوع...">
+                                    <span asp-validation-for="Message.Title" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group mt-3 ">
+                                    <textarea asp-for="Message.Description" rows="4" class="form-control b-box" placeholder="پیام..."></textarea>
+                                    <span asp-validation-for="Message.Description" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-lg-12 text-center mt-4">
+                                <button type="submit" class="btn">ارسال</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END: CONTACT -->

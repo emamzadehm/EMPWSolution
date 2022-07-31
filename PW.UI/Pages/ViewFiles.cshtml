@@ -1,0 +1,8 @@
+﻿@page
+@model PW.UI.Pages.ViewFilesModel
+
+<section>
+
+    @await Component.InvokeAsync("File", new { id = ViewData["id"] })
+
+</section>

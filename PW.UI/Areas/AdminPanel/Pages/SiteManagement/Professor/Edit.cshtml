@@ -1,0 +1,101 @@
+﻿@model PW.ApplicationContracts.ViewModels.ProfessorViewModel
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4 class="modal-title"> ویرایش مشخصات استاد </h4>
+</div>
+
+<form asp-page="./Index" asp-page-handler="Edit"
+      method="post"
+      data-ajax="true"
+      data-callback=""
+      data-action="Refresh"
+      enctype="multipart/form-data">
+    <div class="modal-body">
+        <input type="hidden" asp-for="Id" value="@Model.Id">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Level" class="control-label">عنوان دانشگاهی</label>
+                    <input type="text" class="form-control" asp-for="Level">
+                    <span asp-validation-for="Level" class="error"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label">نام</label>
+                    <input type="text" class="form-control" asp-for="Name">
+                    <span asp-validation-for="Name" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Family" class="control-label">نام خانوادگی</label>
+                    <input type="text" class="form-control" asp-for="Family">
+                    <span asp-validation-for="Family" class="error"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Tel" class="control-label">تلفن</label>
+                    <input type="text" class="form-control" asp-for="Tel">
+                    <span asp-validation-for="Tel" class="error"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label">ایمیل</label>
+                    <input type="text" class="form-control" asp-for="Email">
+                    <span asp-validation-for="Email" class="error"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Address" class="control-label">آدرس</label>
+                    <input type="text" class="form-control" asp-for="Address">
+                    <span asp-validation-for="Address" class="error"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="LinkedInURL" class="control-label">لینکدین</label>
+                    <input type="text" class="form-control" asp-for="LinkedInURL">
+                    <span asp-validation-for="LinkedInURL" class="error"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="MapAddress" class="control-label">لینک آدرس بر روی نقشه گوگل</label>
+                    <input type="text" class="form-control" asp-for="MapAddress">
+                    <span asp-validation-for="MapAddress" class="error"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="IMGContent" class="control-label">تصویر</label>
+                    <input type="file" class="form-control b-box" asp-for="IMGContent">
+                    <span asp-validation-for="IMGContent" class="error"></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
+        <button type="submit" class="btn btn-info waves-effect waves-light">ویرایش</button>
+    </div>
+</form>

@@ -1,0 +1,77 @@
+﻿@model PW.ApplicationContracts.ViewModels.ResumeViewModel
+@{ }
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4 class="modal-title"> ویرایش رزومه استاد </h4>
+</div>
+
+<form asp-page="./Index" asp-page-handler="Edit"
+      method="post"
+      data-ajax="true"
+      data-callback=""
+      data-action="Refresh"
+      enctype="multipart/form-data">
+    <div class="modal-body">
+        <input type="hidden" asp-for="Id" value="@Model.Id">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Priority" class="control-label">اولویت نمایش</label>
+                    <input type="text" class="form-control" asp-for="Priority">
+                    <span asp-validation-for="Priority" class="error"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="FromYear" class="control-label">از سال</label>
+                    <input type="text" class="form-control" asp-for="FromYear">
+                    <span asp-validation-for="FromYear" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="ToYear" class="control-label">تا سال</label>
+                    <input type="text" class="form-control" asp-for="ToYear">
+                    <span asp-validation-for="ToYear" class="error"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="IconFile" class="control-label">تصویر مرتبط</label>
+                    <input type="file" class="form-control b-box" asp-for="IconFile">
+                    <span asp-validation-for="IconFile" class="error"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label">عنوان</label>
+                    <input type="text" class="form-control" asp-for="Title">
+                    <span asp-validation-for="Title" class="error"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label">شرح</label>
+                    <textarea class="form-control autogrow" asp-for="Description"
+                              style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 104px;"></textarea>
+                    <span asp-validation-for="Description" class="error"></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
+        <button type="submit" class="btn btn-info waves-effect waves-light">ویرایش</button>
+    </div>
+</form>

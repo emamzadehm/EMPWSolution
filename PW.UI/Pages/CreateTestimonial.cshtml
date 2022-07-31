@@ -1,0 +1,107 @@
+﻿@page
+@model PW.UI.Pages.CreateTestimonialModel
+<section>
+    <div class="container">
+        <div class="row"></div>
+
+        <div class="row"></div>
+
+        <div class="row"></div>
+
+        <div class="row"></div>
+
+        <div class="section-head">
+            <span>دفترچه خاطرات</span>
+            <h2>ارسال خاطرات</h2>
+        </div>
+
+        <div class="section-inner">
+            <div class="contact-Otherdetails ">
+                <div class="contact-form mt-5">
+                    <form method="post" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly"></div>
+                        <h5 class="section-subHead mb-2">فرم ارسال خاطرات</h5>
+                        @if (!string.IsNullOrWhiteSpace(Model.SuccessMessage))
+                        {
+                    <div class="alert-success p-1 rounded-pill">
+                        <i class="alert-success"></i>
+                        <p>@Model.SuccessMessage</p>
+                    </div>}
+                        @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+                        {
+                    <div class="alert-danger p-1rounded-pill">
+                        <i class="alert-danger"></i>
+                        <p>@Model.ErrorMessage</p>
+                    </div>}
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group mt-3 ">
+                                    <input asp-for="TestimonialVM.StudentName" type="text" class="form-control b-box" placeholder="*نام شما">
+                                    <span asp-validation-for="TestimonialVM.StudentName" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group mt-3 ">
+                                    <input asp-for="TestimonialVM.StudentEmail" type="email" class="form-control b-box" placeholder="*ایمیل">
+                                    <span asp-validation-for="TestimonialVM.StudentEmail" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group mt-3 ">
+                                    <input asp-for="TestimonialVM.UniversityName" type="text" class="form-control b-box" placeholder="*دانشگاه محل تحصیل">
+                                    <span asp-validation-for="TestimonialVM.UniversityName" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group mt-3 ">
+                                    <input asp-for="TestimonialVM.CourseName" type="text" class="form-control b-box" placeholder="*نام درس">
+                                    <span asp-validation-for="TestimonialVM.CourseName" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group mt-3 ">
+                                    <input asp-for="TestimonialVM.EduYear" type="text" class="form-control b-box" placeholder="*سال تحصیلی">
+                                    <span asp-validation-for="TestimonialVM.EduYear" class="text-danger"></span>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group mt-3 form-inline ">
+                                    <label asp-for="TestimonialVM.IMG">تصویر شما</label>
+                                    <input type="file" class="form-control b-box" asp-for="TestimonialVM.IMG" accept="image/*">
+                                    <span asp-validation-for="TestimonialVM.IMG" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group mt-3 ">
+                                    <input asp-for="TestimonialVM.Title" type="text" class="form-control b-box" placeholder="*عنوان خاطره">
+                                    <span asp-validation-for="TestimonialVM.Title" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group mt-3 ">
+                                    <textarea asp-for="TestimonialVM.Description" rows="4" class="form-control b-box" placeholder="...متن خاطره"></textarea>
+                                    <span asp-validation-for="TestimonialVM.Description" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-lg-12 text-center mt-4">
+                                <button type="submit" class="btn">ارسال</button>
+                            </div>
+                        </div>
+                        @*</div>*@
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

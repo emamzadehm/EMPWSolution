@@ -1,0 +1,51 @@
+﻿@model IEnumerable<PW.ApplicationContracts.ViewModels.TestimonialViewModel>
+<section class="section section-dark section-testimony" id="testimony">
+    <div class="container">
+        <div class="section-head text-center">
+            <span>جملات مهربان</span>
+            <h2>خاطرات شما...</h2>
+        </div>
+        <div class="section-inner section-testimony--content">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="swiper-container swiper-testimony ">
+                        <div class="swiper-wrapper">
+
+                            @foreach (var his in Model)
+                            {
+                                <div class="swiper-slide single-testimonials ">
+                                    <div class="single-testimonials-in mx-auto text-center">
+                                        <div class="single-testimonials-head pt-4 pb-5">
+                                            <p>@his.Description</p>
+                                        </div>
+                                        <div class="single-testimonials-foot mx-auto">
+                                            <img src="~/Uploads/@his.StudentImg" alt="" class="mx-auto b-box">
+                                            <h4 class="mt-3 font-weight-bold">@his.StudentName</h4>
+                                            <span class="mt-1 d-block"> درس @his.CourseName - @his.UniversityName</span>
+                                            <span class="mt-1 d-block">سال @his.EduYear</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+
+                    <div class="testimony-nav">
+                        <a href="#" class="swiper-button-next"></a>
+                        <a href="#" class="swiper-button-prev"></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="row">
+
+        <div class="col-lg-12 text-center mt-4">
+            <a asp-page="CreateTestimonial" class="btn ripple">خاطره خود را ثبت کنید...</a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,96 @@
+﻿@model UM.Application.Contracts.ViewModels.UsersViewModel
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4 class="modal-title">مشاهده کاربر</h4>
+</div>
+
+<form asp-page="./Index" asp-page-handler="View"
+      method="post"
+      data-ajax="true"
+      data-callback=""
+      data-action="Refresh"
+      enctype="multipart/form-data">
+    <div class="modal-body">
+        <input type="hidden" asp-for="ID" value="@Model.ID">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="IMG" class="control-label">تصویر</label>
+                    @{ if (string.IsNullOrWhiteSpace(Model.IMGFileAddress))
+                        {
+                            if (Model.Sex == true)
+                                {
+                                    <img src="~/Uploads/UsersManagement/userMale.png" style="width:70px;height:70px" /> 
+                                }
+                                else
+                                {
+                                    <img src="~/Uploads/UsersManagement/userFemale.png" style="width:70px;height:70px" /> }
+                                }
+                            else
+                        {
+                            <img src="~/Uploads/@Model.IMGFileAddress" style="width:70px;height:70px" /> 
+                        } 
+                      }
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Sex" class="control-label">جنسیت</label>
+                    <div class="form-check">
+                        <input asp-for="Sex" class="form-check-input" type="radio" value="true" checked disabled>
+                        <label class="form-check-label" asp-for="Sex">
+                            آقای
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input asp-for="Sex" class="form-check-input" type="radio" value="false" disabled>
+                        <label class="form-check-label" asp-for="Sex">
+                            خانم
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="FirstName" class="control-label">نام</label>
+                    <input type="text" class="form-control" asp-for="FirstName" disabled>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="LastName" class="control-label">نام خانوادگی</label>
+                    <input type="text" class="form-control" asp-for="LastName" disabled>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label">ایمیل(شناسه کاربری)</label>
+                    <input type="email" class="form-control" asp-for="Email" disabled>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Tel" class="control-label">موبایل</label>
+                    <input type="tel" class="form-control" asp-for="Tel" disabled>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
+    </div>
+</form>

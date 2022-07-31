@@ -1,0 +1,31 @@
+﻿@model IEnumerable<PW.ApplicationContracts.ViewModels.CourseViewModel>
+
+<section class="section section-dark section-services" id="services">
+    <div class="container">
+        <div class="section-head">
+            <span>آموزش ها</span>
+            <h2>دوره های آموزشی تدریس شده</h2>
+        </div>
+
+        <div class="section-inner">
+            <div class="row">
+                @foreach (var course in Model)
+                {
+    <div class="col-md-4">
+        <div class="blog-list d-block mb-5">
+            <div class="services-list mt-4 text-center">
+                <div class="list-icon list-icon-6 mt-1 ">
+                    <i class="lni-bar-chart"></i>
+                </div>
+                <div class="blog-list--desc p-4">
+                    <h5 class="mb-0 text-center">@course.Title</h5>
+                    <p class=" mt-3">@course.Description</p>
+                </div>
+            </div>
+        </div>
+    </div>}
+
+            </div>
+        </div>
+    </div>
+</section>

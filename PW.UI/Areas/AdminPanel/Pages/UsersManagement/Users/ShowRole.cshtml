@@ -1,0 +1,53 @@
+﻿@model UM.Application.Contracts.ViewModels.UsersViewModel
+@{
+}
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4 class="modal-title"> اختصاص نقش کاربری برای @Model.Fullname (@Model.Email) </h4>
+</div>
+
+<form asp-page="./Index" asp-page-handler="ShowRole"
+      method="post"
+      data-ajax="true"
+      data-callback=""
+      data-action="Refresh"
+      enctype="multipart/form-data">
+    <div class="modal-body">
+        <input type="hidden" asp-for="ID" value="@Model.ID">
+        <table id="datatable" class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>نقش (ها)</th>
+                    <th>وضعیت</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.RolesList)
+                {
+                    <tr>
+                        <td>@item.RoleName</td>
+                        <td>
+                            @if (!Model.UserRolesList.Select(x => x.RoleID).Contains(item.ID))
+                            {
+                                <a class="btn btn-success pull-right m-rl-5" asp-page="./Index" asp-page-handler="CreateRole" asp-route-RoleID="@item.ID" asp-route-UserID="@Model.ID">
+                                    <i class="fa fa-user"></i> فعالسازی
+                                </a>
+                            }
+                            else
+                            {
+                                <a class="btn btn-danger pull-right m-rl-5" asp-page="./Index" asp-page-handler="RemoveRole" asp-route-RoleID="@item.ID" asp-route-UserID="@Model.ID">
+                                    <i class="fa fa-remove"></i> غیرفعالسازی
+                                </a>
+                            }
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
+        </div>
+</form>

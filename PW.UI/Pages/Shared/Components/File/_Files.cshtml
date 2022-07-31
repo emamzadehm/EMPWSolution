@@ -1,0 +1,61 @@
+﻿@model IEnumerable<PW.ApplicationContracts.ViewModels.FileViewModel>
+    <div class="container">
+
+        <div class="section-head">
+            <br />
+            <br />
+            <br />
+            <h2>دانلود فایل | File Download</h2>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="section-inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">دانلود فایل | File Download</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-11 col-sm-11 col-xs-11">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>عنوان</th>
+                                                    <th>نوع فایل</th>
+                                                    <th>حجم فایل</th>
+                                                    <th>شرح</th>
+                                                    <th>عملیات</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in Model)
+                                                {
+                                            <tr>
+                                                <td>@item.Title</td>
+                                                <td>@item.FileExtention</td>
+                                                <td>@item.FileLenght</td>
+                                                <td>@item.Description</td>
+                                                <td>
+                                                    <a href="~/Uploads/@item.FileName" class="btn btn-success pull-right m-rl-5">
+                                                        <i class="fa fa-download"></i> دانلود | Download
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                                    }
+                                                        </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End row -->
+
+        </div>
+        </div>

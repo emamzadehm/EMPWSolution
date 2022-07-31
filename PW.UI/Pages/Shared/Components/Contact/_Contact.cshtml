@@ -1,0 +1,59 @@
+﻿@model PW.ApplicationContracts.ViewModels.ProfessorViewModel
+    <section class="section section-contact" id="contact">
+        <div class="container">
+            <div class="section-head">
+                <span>درود </span>
+                <h2>ارتباط با من </h2>
+            </div>
+
+            <div class="section-inner">
+                <div class="contact-Otherdetails ">
+                    <div class="contact-details">
+                        <h5 class="section-subHead mb-4"> در تماس باشید</h5>
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="contact-details--panel p-4 b-box text-center  ">
+                                    <div class="mb-3 list-icon list-icon-1">
+                                        <i class="lni-mobile"></i>
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="mt-2">تلفن</p>
+                                        <a href="tel:+@Model.Tel" class="">@Model.Tel+</a>
+                                        <p>&nbsp</p>
+                                        <p>&nbsp</p>
+                                        <p>&nbsp</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="contact-details--panel p-4 b-box text-center  ">
+                                    <div class="mb-3 list-icon list-icon-5">
+                                        <i class="lni-envelope"></i>
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="mt-2">ایمیل</p>
+                                        <a class="contact-details--panelemail" href="mailto:@Model.Email">@Model.Email.ToUpper()</a>
+                                        <p>&nbsp</p>
+                                        <p>&nbsp</p>
+                                        <p>&nbsp</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="contact-details--panel p-4 b-box text-center  ">
+                                    <div class="mb-3 list-icon list-icon-5">
+                                        <i class="lni-envelope"></i>
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="mt-2">آدرس</p>
+                                        <a href="@Model.MapAddress">@Model.Address</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
