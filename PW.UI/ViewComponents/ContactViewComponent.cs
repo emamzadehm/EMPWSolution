@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PW.ApplicationContracts.Interfaces;
 
-namespace Emamzadeh.ViewComponents
+namespace PW.UI.ViewComponents
 {
     public class ContactViewComponent : ViewComponent
     {

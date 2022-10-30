@@ -81,7 +81,7 @@ namespace PW.Infrastructure.EFCore.Repository
                 CourseIdTitle = listitem.Course.Title,
                 Description = listitem.Description
             }).Where(x => x.FileTypeId == Id);
-            return Query.OrderBy(x => x.Id).ToList();
+            return Query.OrderByDescending(x => x.Id).ToList();
         }
     }
 }

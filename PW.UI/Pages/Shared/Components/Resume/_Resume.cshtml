@@ -4,17 +4,16 @@
 
         <div class="section-head">
             <span>رزومه من</span>
-            <h2>تجربیات من</h2>
-        </div>
+            <h2>بیوگرافی</h2>
 
+        </div>
         <div class="section-inner">
             <div class="section-resume-wrap">
 
                 <div class="section-experience mb-5">
+
                     <div class="row">
-                        <div class="col-lg-2">
-                            <h5 class="section-subHead mb-4 ">بیوگرافی</h5>
-                        </div>
+
                         <div class="col-lg-10">
                             <div class="ExperienceList pb-3">
 
@@ -30,28 +29,25 @@
                             <div class="col-12 col-md-12 pb-2 pb-md-0">
                                 @{ if (!string.IsNullOrWhiteSpace(@res.Icon))
                                     {
-                                                                <div class="row">
-                                                                    <div class="col-12 col-md-3 pb-2 pb-md-0">
-                                                                        <img src="~/uploads/@res.Icon" alt="" class="d-block img-thumbnail mx-auto rounded shadow-sm">
-                                                                    </div>
-                                                                    <div class="col-12 col-md-9 pb-2 pb-md-0">
-                                                                        <h5 class="mb-3">@res.Title</h5>
-                                                                        <p>@res.Description</p>
-                                                                    </div>
-                                                                </div>
-                                            }
-                                    else
-                                    {
-                                        <h5 class="mb-3">@res.Title</h5>
-                                        <p>@res.Description</p> 
-                                    } 
-                                 }
+                <div class="row">
+                    <div class="col-12 col-md-3 pb-2 pb-md-0">
+                        <img src="~/uploads/@res.Icon" alt="" class="d-block img-thumbnail mx-auto rounded shadow-sm">
+                    </div>
+                    <div class="col-12 col-md-9 pb-2 pb-md-0">
+                        <h5 class="mb-3">@res.Title</h5>
+                        <p>@res.Description</p>
+                    </div>
+                </div> }
+            else
+            {
+    <h5 class="mb-3">@res.Title</h5>
+                            <p>@res.Description</p> } }
                             </div>
 
 
                         </div>
                     </div>}
-                                }
+            }
 
 
                             </div>

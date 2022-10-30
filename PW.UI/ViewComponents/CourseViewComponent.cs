@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using PW.ApplicationContracts.Interfaces;
 using PW.ApplicationContracts.ViewModels;
 
-namespace Emamzadeh.ViewComponents
+namespace PW.UI.ViewComponents
 {
     public class CourseViewComponent : ViewComponent
     {

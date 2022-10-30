@@ -2,7 +2,7 @@
 using PW.ApplicationContracts.Interfaces;
 using System.Linq;
 
-namespace Emamzadeh.ViewComponents
+namespace PW.UI.ViewComponents
 {
     public class TestimonialsViewComponent : ViewComponent
     {

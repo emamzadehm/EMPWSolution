@@ -1,5 +1,7 @@
 ﻿@page
 @model PW.UI.Pages.CreateTestimonialModel
+
+@{ Layout = "Shared/_LayoutPages"; }
 <section>
     <div class="container">
         <div class="row"></div>
@@ -23,16 +25,16 @@
                         <h5 class="section-subHead mb-2">فرم ارسال خاطرات</h5>
                         @if (!string.IsNullOrWhiteSpace(Model.SuccessMessage))
                         {
-                    <div class="alert-success p-1 rounded-pill">
-                        <i class="alert-success"></i>
-                        <p>@Model.SuccessMessage</p>
-                    </div>}
+            <div class="alert-success p-1 rounded-pill">
+                <i class="alert-success"></i>
+                <p>@Model.SuccessMessage</p>
+            </div>}
                         @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
                         {
-                    <div class="alert-danger p-1rounded-pill">
-                        <i class="alert-danger"></i>
-                        <p>@Model.ErrorMessage</p>
-                    </div>}
+            <div class="alert-danger p-1rounded-pill">
+                <i class="alert-danger"></i>
+                <p>@Model.ErrorMessage</p>
+            </div>}
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group mt-3 ">

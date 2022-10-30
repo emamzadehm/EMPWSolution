@@ -3,11 +3,11 @@ using PW.ApplicationContracts.Interfaces;
 
 namespace PW.UI.ViewComponents
 {
-    public class MenuViewComponent : ViewComponent
+    public class MenuPagesViewComponent : ViewComponent
     {
         private readonly IProfessorApplication _iprofessorapplication;
 
-        public MenuViewComponent(IProfessorApplication iprofessorapplication)
+        public MenuPagesViewComponent(IProfessorApplication iprofessorapplication)
         {
             _iprofessorapplication = iprofessorapplication;
         }
@@ -15,7 +15,7 @@ namespace PW.UI.ViewComponents
         public IViewComponentResult Invoke()
         {
             var selectedprofessor = _iprofessorapplication.GetDetails(1);
-            return View("_Menu", selectedprofessor);
+            return View("_MenuPages", selectedprofessor);
         }
     }
 }
